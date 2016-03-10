@@ -12,8 +12,7 @@ var app = angular.module('app', ['ngSanitize'])
 			}
 			return i;
 		};
-		// ruta de pruebas http://www.emergestudio.es/pruebas/eiimailer/notices.json
-		// ruta oficial :  notices.json
+        
 		$.ajax({
 			url: "/notices",
 			type: "GET",
