@@ -11,6 +11,9 @@ app.use(express.static(__dirname + '/public'));
 mongo.MongoClient.connect(uri, function (err, db) {
     if (err) throw err;
     noticias = db.collection('noticias');
+    noticias.insert(noticesItems, function (err, result) {
+        if (err) throw err;
+    });
 });
 
 app.get('/', function (request, response) {
@@ -103,14 +106,11 @@ var noticesItems = [
 }];
 
 
-noticias.insert(noticesItems, function (err, result) {
-    if (err) throw err;
-});
 
 app.get('/notices', function (req, res) {
     noticias.find(function (error, items) {
-		res.json(items);
-	});
+        res.json(items);
+    });
 });
 
 app.listen(app.get('port'), function () {
