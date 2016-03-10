@@ -22,6 +22,7 @@ app.get('/', function (request, response) {
 
 app.get('/notices', function (req, res) {
     noticias.find(function (error, items) {
+        console.log(items);
         res.send(items);
     });
 });
