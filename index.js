@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var mongo = require('mongodb');
 var bodyParser = require('body-parser');
+var noticias;
 // URI to labMongoDB
 var uri = 'mongodb://heroku_ng4vzrc8:7eiqqmqn0rldusdpvt2rb6u4hg@ds011419.mlab.com:11419/heroku_ng4vzrc8';
 app.set('port', (process.env.PORT || 5000));
@@ -9,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 
 mongo.MongoClient.connect(uri, function (err, db) {
     if (err) throw err;
-    var noticias = db.collection('noticias');
+    noticias = db.collection('noticias');
 });
 
 app.get('/', function (request, response) {
