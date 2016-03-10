@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-	extended: true
+    extended: true
 }));
 mongo.MongoClient.connect(uri, function (err, db) {
     if (err) throw err;
@@ -26,8 +26,8 @@ app.get('/', function (request, response) {
 
 app.get('/notices', function (req, res) {
     noticias.find(function (err, items) {
-    if (err) throw err;
-        res.json(items);
+        if (err) throw err;
+        res.send(items);
     });
 });
 
