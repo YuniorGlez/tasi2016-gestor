@@ -27,7 +27,8 @@ app.get('/', function (request, response) {
 app.get('/notices', function (req, res) {
     noticias.find(function (err, items) {
         if (err) throw err;
-        res.send(items);
+        console.log(JSON.stringify(items));
+        res.send('Hola mundo');
     });
 });
 
