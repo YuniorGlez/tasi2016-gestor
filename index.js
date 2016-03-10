@@ -27,8 +27,23 @@ app.get('/', function (request, response) {
 app.get('/notices', function (req, res) {
     noticias.find(function (err, items) {
         if (err) throw err;
-        console.log(JSON.parse(items));
+        console.json(items);
         res.send('Hola mundo');
+    });
+});
+
+app.delete('/notices', function (req, res) {
+    noticias.remove({},function (err, items) {
+        if (err) throw err;
+        console.log(JSON.parse(items));
+        res.send('Todo borrado');
+    });
+});
+
+app.post('/notices', function (req, res) {
+    noticias.save(req.body,function (err, items) {
+        if (err) throw err;
+        res.send('Metido');
     });
 });
 
