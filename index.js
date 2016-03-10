@@ -1,15 +1,15 @@
 var express = require('express');
 var app = express();
-var db = require('mongodb');
+var mongo = require('mongodb');
 var bodyParser = require('body-parser');
 // URI to labMongoDB
 var uri = 'mongodb://heroku_ng4vzrc8:7eiqqmqn0rldusdpvt2rb6u4hg@ds011419.mlab.com:11419/heroku_ng4vzrc8';
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-db.MongoClient.connect(uri, function (err, db) {
+mongo.MongoClient.connect(uri, function (err, db) {
     if (err) throw err;
-    var songs = db.collection('songs');
+    var noticias = db.collection('noticias');
 });
 
 app.get('/', function (request, response) {
@@ -101,14 +101,13 @@ var noticesItems = [
         "fecha": "29-09-2015"
 }];
 
-var notices = db.collection("noticias");
 
-notices.insert(noticesItems, function (err, result) {
+noticias.insert(noticesItems, function (err, result) {
     if (err) throw err;
 });
 
 app.get('/notices', function (req, res) {
-    notices.find(function (error, items) {
+    noticias.find(function (error, items) {
 		res.json(items);
 	});
 });
