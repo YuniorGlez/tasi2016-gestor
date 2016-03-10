@@ -15,16 +15,16 @@ var app = angular.module('app', ['ngSanitize'])
 		// ruta de pruebas http://www.emergestudio.es/pruebas/eiimailer/notices.json
 		// ruta oficial :  notices.json
 		$.ajax({
-			url: "notices.json",
+			url: "/notices",
 			type: "GET",
-			dataType: "jsonp",
-			jsonpCallback: 'data',
 			success: function (data) {
-				$scope.noticias = data["noticias"].slice().reverse();
-				for	(var i = 0 ; i < getLength($scope.noticias); i++){
-					$scope.noticias[i].cuerpo = $sce.trustAsHtml($scope.noticias[i].cuerpo);
-				}
-				$scope.$apply();
+                alert(data);
+                
+//				$scope.noticias = data.slice().reverse();
+//				for	(var i = 0 ; i < getLength($scope.noticias); i++){
+//					$scope.noticias[i].cuerpo = $sce.trustAsHtml($scope.noticias[i].cuerpo);
+//				}
+//				$scope.$apply();
 			}
 		});
 		$scope.cambia = function (index) {
