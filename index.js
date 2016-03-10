@@ -8,6 +8,10 @@ var uri = 'mongodb://heroku_ng4vzrc8:7eiqqmqn0rldusdpvt2rb6u4hg@ds011419.mlab.co
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
 mongo.MongoClient.connect(uri, function (err, db) {
     if (err) throw err;
     noticias = db.collection('noticias');
