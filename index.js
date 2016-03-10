@@ -23,8 +23,7 @@ app.get('/', function (request, response) {
 app.get('/notices', function (req, res) {
     noticias.find(function (err, items) {
     if (err) throw err;
-        console.log(items);
-        res.send(items);
+        res.json(items);
     });
 });
 
