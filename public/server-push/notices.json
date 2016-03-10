@@ -1,0 +1,44 @@
+data({
+ 	"noticias": [{
+ 		"img": "http://emergestudio.es/pruebas/eiimailer/uploads/bigIcon.png",
+ 		"titulo": "Bienvenido a Eii Informa",
+ 		"cuerpo": "Esta es la nueva app oficial de la Escuela de Ingeniería Informática de la ULPGC para mandar información acerca de cualquier noticia de interés para estudiantes e interesados. \n Disfruta de nuestra app y mantente informado de todas las noticias.",
+ 		"clase": "none ",
+ 		"vista": false
+ }, {
+"img" : "http://www.eii.ulpgc.es/app-eii-informa/uploads/Programa-Mentor-2015.png" ,
+"titulo" : "Participa en el PROGRAMA MENTOR DE LA EII para el curso 2015-16",
+"cuerpo" : "¿Te apetece ayudar a otros estudiantes de nuevo ingreso en la Escuela a integrarse? Buscamos estudiantes de cursos superiores que se apunten a liderar un grupo de 10-15 estudiantes y que les ayuden en su nueva vida con nosotros. ¿Te animas? La experiencia el curso pasado fue fantástica, muy divertida y enriquecedora. No te quitará tiempo y ayudarás a nuevos compañeros. Si te apetece participar como MENTOR en el Programa MENTOR 2015-16, simplemente rellena y envía el formulario que encontrarás en el siguiente enlace, como mucho el 3 de septiembre de 2015: <a onclick=\"window.open('http://www.eii.ulpgc.es/tb_university_ex/?q=article/programa-mentor-eii-2015-16')\">programa mentor </a>\n",
+"clase" : " none" ,
+"vista" : false
+ }, {
+"img" : "http://www.eii.ulpgc.es/app-eii-informa/uploads/Formación-profesional-especializada-EII-2015-16.png" ,
+"titulo" : "Nueva oferta de estudios de FORMACIÓN PROFESIONAL ESPECIALIZADA en la EII para el curso 2015-16",
+"cuerpo" : "¿Tienes un CICLO FORMATIVO SUPERIOR EN INFORMÁTICA? Desde este curso 2015-16 puedes AMPLIAR tu formación con los Cursos de FORMACIÓN PROFESIONAL ESPECIALIZADA en nuestra Escuela. Por fin podrás acceder a especializarte en contenido puntero en Informática en la Universidad de Las Palmas de Gran Canaria. PREINSCRIPCIÓN abierta del 6 al 24 de Julio de 2015. Ofrecemos 3 cursos, con un total de 56 plazas.  Más información en la web del Centro: <a onclick=\"window.open('http://www.eii.ulpgc.es/tb_university_ex/?q=formacion-profesional-especializada-2015-16')\">Formación Profesional Especializada</a>",
+"clase" : " none" ,
+"vista" : false
+ }, {
+"img" : "http://www.eii.ulpgc.es/app-eii-informa/uploads/Captura de pantalla 2015-07-04 17_44_28.png" ,
+"titulo" : "Explicación detallada de las DISTINTAS MENCIONES del Grado en Ingeniería Informática de la EII",
+"cuerpo" : "¿Quiéres más información sobre qué MENCIÓN escoger de nuestro Grado en Ingeniería Informática? Ahora tienes una sección en la web del Centro con una explicación detallada: <a onclick=\"window.open('http://www.eii.ulpgc.es/tb_university_ex/?q=menciones-del-grado-en-ingenieria-informatica')\">Menciones</a>",
+"clase" : " none" ,
+"vista" : false
+ }, {
+"img" : "http://www.eii.ulpgc.es/app-eii-informa/uploads/Posgrados-2015---EII.jpg" ,
+"titulo" : "Abierto periodo de PREINSCRIPCIÓN a la oferta de POSGRADOS en Ingenier-ía Informática",
+"cuerpo" : "Abierta la preinscripción del 15 de Junio al 3 de Jullio de 2015 : Estudia un POSGRADO en nuestra Escuela de Ingeniería Informática de la ULPGC. La oferta para este curso 2015-16 va desde un Máster Oficial en Ingeniería Informática con tres especialidades de entre las que elegir (Tecnología Web y Negocio Digital, Programación de Dispositivos Móviles y Virtualización, Computación en la Nube y Supercomputación), Un Experto Universitario en “Virtualización y Computación en la Nube” (24 créditos), hasta un Experto Universitario en “Diseño y Programación de Videojuegos” (30 créditos). Más información en: http://eii.ulpgc.es/estudios",
+"clase" : " none" ,
+"vista" : false
+ }, {
+"img" : "http://www.eii.ulpgc.es/app-eii-informa/uploads/Posgrados-2015---EII.jpg" ,
+"titulo" : "Abierto periodo de PREINSCRIPCIÓN a la oferta de POSGRADOS en Ingenier-ía Informática",
+"cuerpo" : "Abierta la preinscripción del 15 de Junio al 3 de Jullio de 2015 : Estudia un POSGRADO en nuestra Escuela de Ingeniería Informática de la ULPGC. La oferta para este curso 2015-16 va desde un Máster Oficial en Ingeniería Informática con tres especialidades de entre las que elegir (Tecnología Web y Negocio Digital, Programación de Dispositivos Móviles y Virtualización, Computación en la Nube y Supercomputación), Un Experto Universitario en “Virtualización y Computación en la Nube” (24 créditos), hasta un Experto Universitario en “Diseño y Programación de Videojuegos” (30 créditos). Más información en:<a onclick=\"window.open(' http://eii.ulpgc.es/estudios','_system')\"> http://eii.ulpgc.es/estudios</a>",
+"clase" : " none" ,
+"vista" : false
+ }, {
+"img" : "http://www.eii.ulpgc.es/app-eii-informa/uploads/Posgrados-2015---EII.jpg" ,
+"titulo" : "Abierto periodo de PREINSCRIPCIÓN a la oferta de POSGRADOS en Ingenier-ía Informática",
+"cuerpo" : "Abierta la preinscripción del 15 de Junio al 3 de Jullio de 2015 : Estudia un POSGRADO en nuestra Escuela de Ingeniería Informática de la ULPGC. La oferta para este curso 2015-16 va desde un Máster Oficial en Ingeniería Informática con tres especialidades de entre las que elegir (Tecnología Web y Negocio Digital, Programación de Dispositivos Móviles y Virtualización, Computación en la Nube y Supercomputación), Un Experto Universitario en “Virtualización y Computación en la Nube” (24 créditos), hasta un Experto Universitario en “Diseño y Programación de Videojuegos” (30 créditos). Más información en:<a onclick=\"window.open(' http://eii.ulpgc.es/estudios','_system')\"> http://eii.ulpgc.es/estudios</a>",
+"clase" : " none" ,
+"vista" : false
+}]});

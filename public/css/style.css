@@ -1,0 +1,311 @@
+*{
+	transition: 2s all ease;
+	transform: 2s all ease;
+}
+
+body{
+	margin: 0px !important;
+	padding: 0px !important;
+}
+/*PAGE 1*/
+.logo-index{
+	text-align: center;
+	box-sizing: border-box;
+	margin-top: 3vh ;
+}
+.logo-index img{
+	max-height: 200px !important;
+}
+
+.logo {
+	height: 50px;
+}
+.slogan {
+	text-align: center;
+	font-size: 2em;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+	width: 50%;
+	margin-left: 25%;
+}
+.login {
+	text-align: center;
+}
+.submit {
+	height: 40px;
+	margin-top: 21px;
+}
+.submit i{
+	position: relative;
+	padding: 0px !important;
+	font-size: 1.3em;
+	top: 4px;
+	left: 5px;
+	box-sizing: border-box;
+	transition: .9s all ease;
+}
+.submit:hover i{
+	left: 65px;
+}
+.content {
+	min-height: 100vh;
+	margin: 0px !important;
+	overflow: hidden;
+}
+.mobile .content{
+	text-align: justify;
+	font-size: 0.6em;
+	position: relative;
+	top: -34px;
+	left: 15px;
+	height: 80px;
+	width: 130px;
+	overflow: hidden;
+}
+.ipad .content{
+	text-align: justify;
+	font-size: 0.6em;
+	position: relative;
+	top: -25px;
+	left: 45px;
+	height: 80px;
+	width: 330px;
+	overflow: hidden;
+}
+
+.navbarIntro {
+	margin: 0px !important;
+	height: 70px;
+	box-sizing: border-box;
+}
+.navbarIntro img{
+	height: 60px;
+	width: 250px !important;
+	margin-top: 8px;
+}
+
+.one-page {
+	max-height: 100vh !important;
+	overflow: hidden;
+}
+/* PAGE 2*/
+#materialbox-overlay{
+display: none;
+}
+.no-margin {
+	margin: 0px !important;
+}
+
+.navbar {
+	height: 45px;
+	overflow: hidden;
+	margin: 0px !important;
+}
+.navbar i{
+	font-size: 2.1em;
+	margin-top: 7px;
+}
+.navbar p{
+	font-size: 1.2em;
+	margin-top: 0.5em;
+	height: 2em;
+	padding: auto;
+	text-align: right;
+	color: white;
+
+}
+.leftDisplay {
+	max-height: 96vh;
+	overflow-y: scroll;
+	padding-bottom: 15em;
+}
+.leftDisplay .noticia:last-child{
+	margin-bottom: 15em;
+}
+
+.leftDisplay .noticia {
+	max-height: 200px !important;
+	overflow: hidden;
+	padding-bottom: 18px !important;
+	padding-top: 6px !important;
+	padding-left: 3px !important;
+	transition: 1s all ease;
+	max-width: 95%;
+}
+.del-btn{
+	position: fixed;
+	top: 0px;
+	right: 5px;
+}
+/*
+
+.leftDisplay .noticia:hover{
+	background-color: #4dd0e1 !important;
+}
+*/
+.leftDisplay .photo {
+	height: 190px;
+	padding: 0px;
+	margin:  0px !important;
+}
+
+.notice .photo {
+	max-height: 500px;
+}
+
+.leftDisplay .title{
+	font-size: 1.4em;
+	max-height: 70px;
+	overflow: hidden;
+	margin: 2px;
+}
+
+.leftDisplay .description{
+	margin-top: 7px;
+	text-align: justify;
+	max-height: 160px;
+}
+
+.noticeDisplay{
+	min-height: 97vh;
+	max-height: 97vh;
+	overflow: scroll;
+	text-align: center;
+	padding-top: 2em !important;
+	word-wrap: break-word;
+}
+.del-btn-der{
+	position: fixed;
+	top: 45px;
+	right: 25px;
+}
+
+.cuerpo {
+	text-align: justify;
+	padding: 2em;
+	font-size: 1.1em;
+}
+.mobile{
+	width: 180px !important;
+	height: 350px;
+	background: url(../img/mobile-portrait.png);
+	background-size: 100% 100%;
+	padding: 43px 12px !important;
+	border-radius: 23px;
+	color: rgb(182, 209, 232);
+
+}
+
+.displayMobile {
+	margin: 0px !important;
+	height: 48vh;
+	padding-top: 4vh;
+	box-sizing: border-box;
+}
+
+.mobile .notice{
+	width: 158px;
+	height: 268px;
+	overflow: scroll;
+}
+.ipad .notice{
+	width: 447px;
+	height: 309px;
+	overflow: scroll;
+}
+
+.mobile .img{
+	position: relative;
+	width: 130px;
+	height: 90px;
+	top: 10px;
+	left: 15px;
+
+}.ipad .img{
+	position: relative;
+	width: 320px;
+	height: 150px;
+	top: 10px;
+	left: 65px;
+}
+
+.mobile .navbar {
+	position: relative;
+	height: 25px;
+	top: 25px;
+	left: 63px;
+	background: white;
+	width: 157px;
+	z-index: 3;
+}
+
+.mobile .tittle{
+	position: relative;
+	left: 15px;
+	top: -5px;
+	text-align: center;
+	font-size: 0.9em;
+	height: 37px;
+	width: 130px;
+	overflow: hidden;
+
+}.ipad .tittle{
+	position: relative;
+	left: 45px;
+	top: -5px;
+	text-align: center;
+	font-size: 0.9em;
+	height: 37px;
+	width: 330px;
+	overflow: hidden;
+
+}
+
+.ipad {
+	background-image: url(../img/ipad-landscape.png);
+	background-size: 565px 352px;
+	background-position: -3px 0px;
+	box-sizing: border-box;
+	color: rgb(182, 209, 232);
+	height: 350px !important;
+	width: 562px !important;
+	padding: 22px 60px !important;
+	border-radius: 35px;
+}
+
+form {
+	padding-top: 6em;
+}
+form textarea{
+	height: 200px;
+	border: none
+}
+.cancel i{
+	position: relative;
+	padding: 0px !important;
+	font-size: 1.1em;
+	top: 4px;
+	left: 5px;
+	box-sizing: border-box;
+	transition: .9s all ease;
+}
+.no-padding {
+	padding: 0px !important;
+}
+
+.displayIpad {
+	min-height: 48vh;
+	overflow: hidden;
+	margin: 0px !important;
+}
+.enviar i{
+	position: relative;
+	top: 4px;
+	left: 4px;
+}
+
+.users {
+	font-size: .8em !important;
+	text-align: right;
+
+}

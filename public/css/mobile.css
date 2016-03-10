@@ -1,0 +1,22 @@
+form{
+	height: 45vh !important;
+	overflow: scroll;
+	padding: 2em;
+}
+form .input-field{
+	min-height: 55px;
+}
+input{
+	margin: 0px !important;
+}
+textarea{
+	height: 100px !important;
+}
+.leftDisplay .description{
+	height: 120px;
+	overflow: scroll;
+	padding-bottom: 1em;
+}
+.leftDisplay .title{
+	overflow: scroll;
+}

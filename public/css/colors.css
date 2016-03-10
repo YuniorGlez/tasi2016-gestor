@@ -1,0 +1,59 @@
+
+/*
+
+Petroleo : #6f8ca3
+Azul escuela : #0c426f
+
+*/
+
+/* Generals */
+.navbar{
+	background-color: #0c426f;
+}
+.azul-escuela{
+	background-color: #0c426f;
+}
+
+
+/*  index.html */
+.index{
+	background-color: white;
+}
+
+/* board.php */
+.plus-btn{
+	color: #A1BA00;
+}
+.leftDisplay{
+	background-color: #6f8ca3;
+}
+.leftDisplay .noticia{
+	background-color: #0c426f;
+	color: white;
+}
+.noticeDisplay{
+	background-color: white;
+}
+.publicado{
+	color: rgba(0, 0, 0, 0.47);
+	margin-right: 2.5em;
+	margin-top: -2em;
+}
+
+
+/* nuevaentrada.php */
+.form-left{
+	background-color: #6f8ca3 ;
+}
+
+.previous-view{
+	background-color: white;
+}
+.mobile .notice{
+	color : white;
+	background-color: #6f8ca3 !important;
+}
+.ipad .notice{
+	color : white;
+	background-color: #6f8ca3 !important;
+}
