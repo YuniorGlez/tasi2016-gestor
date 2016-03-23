@@ -54,7 +54,7 @@ app.post('/notice', function (req, res) {
 });
 
 function getNextSequence(name, callback) {
-	db.counters.findAndModify({
+	db.contadores.findAndModify({
 		query: {
 			_id: name
 		},
