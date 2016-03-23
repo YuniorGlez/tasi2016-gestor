@@ -30,7 +30,7 @@ app.delete('/notices/:id', function (req, res) {
 });
 app.get('/notice/:id', function (req, res) {
 	var id = parseInt(req.params.id);
-	db.noticias.finOne({_id: id} , function (err,notice) {
+	db.noticias.findOne({_id: id} , function (err,notice) {
 		if (err) throw err;
 		return res.json(notice);
 	});
