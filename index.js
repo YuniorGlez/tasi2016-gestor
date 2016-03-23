@@ -11,6 +11,14 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
+app.all('*', function (req, res, next) {
+	req.accepts('application/json');
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET');
+	next();
+});
 app.get('/', function (request, response) {
 	response.render('index.html');
 });
