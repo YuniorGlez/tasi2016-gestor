@@ -8,39 +8,49 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: true
+	extended: true
 }));
 
 app.get('/', function (request, response) {
-    response.render('index.html');
+	response.render('index.html');
 });
 
 app.get('/notices', function (req, res) {
-    db.noticias.find({}, function (err, items) {
-        if (err) return console.log('err=' + JSON.stringify(err));
-        return res.json(items); 
-    });
+	db.noticias.find({}, function (err, items) {
+		if (err) return console.log('err=' + JSON.stringify(err));
+		return res.json(items);
+	});
 });
 app.delete('/notices/:id', function (req, res) {
 	var id = parseInt(req.params.id);
-    db.noticias.remove({_id:id}, function (err) {
-        if (err) throw err;
-        return res.send('Noticia con id = ' + id + ' borrado con exito');
-    });
-}); 
-app.get('/notices/:id', function (req, res) {
+	db.noticias.remove({_id: id}, function (err) {
+		if (err) throw err;
+		return res.send('Noticia con id = ' + id + ' borrado con exito');
+	});
+});
+app.get('/notice/:id', function (req, res) {
 	var id = parseInt(req.params.id);
-    db.noticias.finOne({_id:id}, function (err, notice) {
-        if (err) throw err;
-        return res.json(notice);
-    });
-}); 
+	db.noticias.finOne({_id: id} , function (err,notice) {
+		if (err) throw err;
+		return res.json(notice);
+	});
+});
 app.post('/notice', function (req, res) {
-    console.log(req.body);
-    db.noticias.insert(req.body, function (err, items) {
-        if (err) throw err;
-        res.send('Metido');
-    });
+	var validate = true;
+	if (validate) {
+		getNextSequence('noticias', function (nextId) {
+			db.noticias.insert({
+				_id: nextId,
+				img: req.body.img,
+				titulo: req.body.titulo,
+				cuerpo: req.body.cuerpo
+			}, function (err, items) {
+				if (err) throw err;
+				res.send('Metido');
+			});
+		})
+	}
+
 });
 
 function getNextSequence(name, callback) {
@@ -60,7 +70,7 @@ function getNextSequence(name, callback) {
 }
 
 app.listen(app.get('port'), function () {
-	db.noticias.remove({});
-	db.contadores.insert({_id:'noticias', seq: 0});
-    console.log('Node app is running on port', app.get('port'));
+	//	db.noticias.remove({});
+	//	db.contadores.insert({_id:'noticias', seq: 0});
+	console.log('Node app is running on port', app.get('port'));
 });
