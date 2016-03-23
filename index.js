@@ -25,7 +25,7 @@ app.delete('/notices/:id', function (req, res) {
 	var id = parseInt(req.params.id);
     db.noticias.remove({_id:id}, function (err) {
         if (err) throw err;
-        return res.send('Noticia con id = ' id + ' borrado con exito');
+        return res.send('Noticia con id = ' + id + ' borrado con exito');
     });
 }); 
 app.get('/notices/:id', function (req, res) {
