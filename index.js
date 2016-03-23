@@ -20,7 +20,7 @@ app.all('*', function (req, res, next) {
 	next();
 });
 app.get('/', function (request, response) {
-	response.render('index.html');
+	response.render('/public/index.html');
 });
 
 app.get('/notices', function (req, res) {
