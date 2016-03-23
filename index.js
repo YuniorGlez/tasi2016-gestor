@@ -10,36 +10,39 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-//mongo.MongoClient.connect(uri, function (err, db) {
-//    if (err) throw err;
-//});
 
 app.get('/', function (request, response) {
     response.render('index.html');
 });
 
 app.get('/notices', function (req, res) {
-    console.log(typeof parseInt(req.params.id));
     db.noticias.find({}, function (err, items) {
-        if (err) throw err;
-        console.log(items);
-        res.json(items); // LINEA QUE PETA
+        if (err) return console.log('err=' + JSON.stringify(err));
+        return res.json(items); 
     });
 });
-app.delete('/notices', function (req, res) {
-    noticias.remove({}, function (err,items) {
+app.delete('/notices/:id', function (req, res) {
+	var id = parseInt(req.params.id);
+    db.noticias.remove({_id:id}, function (err) {
         if (err) throw err;
-        console.log(items); 
-        res.send('Todo borrado');
+        return res.send('Noticia con id = ' id + ' borrado con exito');
     });
 }); 
-app.post('/notices', function (req, res) {
+app.get('/notices/:id', function (req, res) {
+	var id = parseInt(req.params.id);
+    db.noticias.finOne({_id:id}, function (err, notice) {
+        if (err) throw err;
+        return res.json(notice);
+    });
+}); 
+app.post('/notice', function (req, res) {
     console.log(req.body);
-    noticias.insert(req.body, function (err, items) {
+    db.noticias.insert(req.body, function (err, items) {
         if (err) throw err;
         res.send('Metido');
     });
 });
+
 app.listen(app.get('port'), function () {
     console.log('Node app is running on port', app.get('port'));
 });
