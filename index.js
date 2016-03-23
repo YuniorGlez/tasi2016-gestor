@@ -3,7 +3,7 @@ var app = express();
 var mongojs = require('mongojs');
 var bodyParser = require('body-parser');
 var uri = 'mongodb://heroku_ng4vzrc8:7eiqqmqn0rldusdpvt2rb6u4hg@ds011419.mlab.com:11419/heroku_ng4vzrc8';
-var db = mongojs(uri, ['noticias']);
+var db = mongojs(uri, ['noticias', 'contadores']);
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -43,6 +43,24 @@ app.post('/notice', function (req, res) {
     });
 });
 
+function getNextSequence(name, callback) {
+	db.counters.findAndModify({
+		query: {
+			_id: name
+		},
+		update: {
+			$inc: {
+				seq: 1
+			}
+		}
+	}, function (err, contador, other) {
+		if (err) console.log('err= ' + err);
+		return callback(contador.seq);
+	});
+}
+
 app.listen(app.get('port'), function () {
+	db.noticias.remove({});
+	db.contadores.insert({_id:'noticias', seq: 0});
     console.log('Node app is running on port', app.get('port'));
 });
