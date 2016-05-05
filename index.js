@@ -1,8 +1,6 @@
 var uri = 'mongodb://heroku_ng4vzrc8:7eiqqmqn0rldusdpvt2rb6u4hg@ds011419.mlab.com:11419/heroku_ng4vzrc8';
 var user = "root";
 var pass = "1234";
-var username = process.env.USER;
-var pass = process.env.PASS;
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
@@ -19,10 +17,6 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 app.post('/login', function (req, response) {
-	console.log("User = " + req.body.username);
-	console.log("UserEnv = " + username);
-	console.log("Pass = " + req.body.pass);
-	console.log("PassEnv = " + pass);
 	if (req.body.username == username && req.body.pass == pass)
 		response.send("Usuario validado");
 	else
