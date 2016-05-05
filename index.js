@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.post('/login', function (req, response) {
 	console.log(req.body);
-	if (req.body.username == username && req.body.pass == pass)
+	if (req.body.username == username && req.body.password == pass)
 		response.send("Usuario validado");
 	else
 		response.send("Usuario no válido");
