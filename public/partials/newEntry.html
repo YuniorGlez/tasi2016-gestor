@@ -1,0 +1,53 @@
+<div class="navbar row">
+	<p class="col s11">Hello Fran !</p>
+	<i class="material-icons col s1">exit_to_app</i>
+</div>
+<div class="row content">
+	<div class="col s12 m3 l5 form-left content">
+		<form enctype="multipart/form-data" autocomplete="on">
+			<div class="flow-text input-field row col s12 m12 offset-l2 l7 card-panel z-depth-1 hoverable">
+				<input id="last_name"  type="text" class="validate" ng-model="newEntry.title">
+				<label for="last_name">Título</label>
+			</div>
+			<div class=" flow-text input-field row col s12 m12 offset-l1 l9 card-panel z-depth-1 hoverable ">
+				<textarea ng-model="newEntry.description" ></textarea>
+				<label for="last_name">Descripción</label>
+			</div>
+			<div class="file-field input-field row col s10 offset-s1 m12 offset-l2  z-depth-0 hoverable l7">
+				<input class="file-path validate col s7 m5" type="text" />
+				<div class="azul-escuela btn col s5 offset-m1 m6">
+					<span>Fichero</span>
+					<input type="file" id="img-file" value="Image" name="img" ng-model="newEntry.img" accept="img/*">
+				</div>
+			</div>
+			<div class="row">
+				<div class="azul-escuela cancel btn waves-effect waves-light col s4 offset-s1" ng-click="cancelar()">Cancelar <i class="material-icons">cancel</i>
+				</div>
+				<div class="azul-escuela enviar btn waves-effect waves-light col s4 offset-s1" ng-click="enviar()" type="submit">Enviar <i class="material-icons">send</i>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="col hide-on-small-only m9 l7 previous-view content no-padding">
+		<div class="displayMobile row ">
+			<div class="mobile col offset-m4 offset-l4 l6 animated bounceIn z-depth-1 hoverable">
+				<div class="notice text-flow">
+					<img ng-src="{{newEntry.img}}" class="img azul-escuela" />
+					<h2 class="tittle">{{newEntry.title}}</h2>
+					<p class="content">{{newEntry.description}}</p>
+				</div>
+
+			</div>
+		</div>
+		<div class="displayIpad row">
+			<div class="ipad row col m9 offset-l1 animated bounceIn z-depth-1 hoverable">
+				<div class="notice text-flow">
+					<img ng-src="{{newEntry.img}}" class="img azul-escuela" />
+					<h2 class="tittle">{{newEntry.title}}</h2>
+					<p class="content">{{newEntry.description}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

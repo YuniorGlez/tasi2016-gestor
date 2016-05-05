@@ -1,26 +1,45 @@
+var uri = 'mongodb://heroku_ng4vzrc8:7eiqqmqn0rldusdpvt2rb6u4hg@ds011419.mlab.com:11419/heroku_ng4vzrc8';
+var user = "root";
+var pass = "1234";
+var username = process.env.USER;
+var pass = process.env.PASS;
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
 var bodyParser = require('body-parser');
-var uri = 'mongodb://heroku_ng4vzrc8:7eiqqmqn0rldusdpvt2rb6u4hg@ds011419.mlab.com:11419/heroku_ng4vzrc8';
-var db = mongojs(uri, ['noticias', 'contadores']);
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.json());
+var cookieParser = require('cookie-parser');
+var expressSession = require('express-session');
+
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
-app.all('*', function (req, res, next) {
-	req.accepts('application/json');
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "X-Requested-With");
-	res.header('Access-Control-Allow-Headers', 'Content-Type');
-	res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET');
-	next();
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(expressSession({
+	secret: process.env.SESSION_SECRET ||  'tasi2016',
+	resave: false,
+	saveUninitialized: false
+}));
+
+var db = mongojs(uri, ['noticias', 'contadores', 'users']);
+app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
+
+app.post('/login', function (req, response) {
+	console.log("User = " + req.body.username);
+	console.log("UserEnv = " + username);
+	console.log("Pass = " + req.body.pass);
+	console.log("PassEnv = " + pass);
+	if (req.body.username == username && req.body.pass == pass)
+		response.send("pene !");
+	else
+		response.send("puta !");
 });
-app.get('/', function (request, response) {
-	response.render('/public/index.html');
+
+app.get('/logout', function (req, res) {
+	req.logout();
+	res.sendStatus(200);
 });
 
 app.get('/notices', function (req, res) {
@@ -29,16 +48,20 @@ app.get('/notices', function (req, res) {
 		return res.json(items);
 	});
 });
-app.delete('/notices/:id', function (req, res) {
+app.delete('/notice/:id', function (req, res) {
 	var id = parseInt(req.params.id);
-	db.noticias.remove({_id: id}, function (err) {
+	db.noticias.remove({
+		_id: id
+	}, function (err) {
 		if (err) throw err;
 		return res.send('Noticia con id = ' + id + ' borrado con exito');
 	});
 });
 app.get('/notice/:id', function (req, res) {
 	var id = parseInt(req.params.id);
-	db.noticias.findOne({_id: id} , function (err,notice) {
+	db.noticias.findOne({
+		_id: id
+	}, function (err, notice) {
 		if (err) throw err;
 		return res.json(notice);
 	});
@@ -78,7 +101,6 @@ function getNextSequence(name, callback) {
 }
 
 app.listen(app.get('port'), function () {
-	//	db.noticias.remove({});
-	//	db.contadores.insert({_id:'noticias', seq: 0});
 	console.log('Node app is running on port', app.get('port'));
+	db.users.save()
 });
