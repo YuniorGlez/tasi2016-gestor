@@ -62,12 +62,9 @@ app.get('/notice/:id', function (req, res) {
 	});
 });
 app.post('/notice', function (req, res) {
-//	var validate = true;
-//	if (validate) {
 		getNextSequence('noticias', function (nextId) {
 			db.noticias.insert({
 				_id: nextId,
-//				img: req.body.img,
 				titulo: req.body.titulo,
 				cuerpo: req.body.cuerpo
 			}, function (err, items) {
@@ -75,7 +72,6 @@ app.post('/notice', function (req, res) {
 				res.send('Metido');
 			});
 		})
-//	}
 
 });
 
