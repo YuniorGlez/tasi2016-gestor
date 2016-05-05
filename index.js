@@ -7,21 +7,12 @@ var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var expressSession = require('express-session');
-
 
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
 app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(expressSession({
-	secret: process.env.SESSION_SECRET ||  'tasi2016',
-	resave: false,
-	saveUninitialized: false
-}));
 
 var db = mongojs(uri, ['noticias', 'contadores', 'users']);
 app.set('port', (process.env.PORT || 5000));
