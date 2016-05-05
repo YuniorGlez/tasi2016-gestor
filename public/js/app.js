@@ -20,16 +20,15 @@ angular.module('TasiApp', ['ngRoute', 'ngSanitize'])
 		$scope.loginData.username = "pepe";
 		$scope.loginData.pass = "pepe";
 		$scope.login = function () {
-			$http.post('/login', {
-				username: $scope.loginData.user,
-				password: $scope.loginData.pass
-			}).then(
+			$http.post('/login',$scope.loginData).then(
 				function (success) {
 					alert(JSON.stringify(success.data));
-//					if (success.data) {
-//						localStorage.setItem('user', JSON.stringify(success.data));
-//						window.location.href = "#/board";
-//					}
+					if (success.data == 'Usuario validado') {
+						localStorage.setItem('user', JSON.stringify(success.data));
+						window.location.href = "#/board";
+					}
+					else
+						alert('Usuario incorrecto');
 				},
 				function (err) {
 					if (err) console.log('err');
