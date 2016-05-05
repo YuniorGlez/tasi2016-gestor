@@ -17,6 +17,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 app.post('/login', function (req, response) {
+	console.log(req.body);
 	if (req.body.username == username && req.body.pass == pass)
 		response.send("Usuario validado");
 	else
