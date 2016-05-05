@@ -1,5 +1,5 @@
 var uri = 'mongodb://heroku_ng4vzrc8:7eiqqmqn0rldusdpvt2rb6u4hg@ds011419.mlab.com:11419/heroku_ng4vzrc8';
-var user = "root";
+var username = "root";
 var pass = "1234";
 var express = require('express');
 var app = express();
