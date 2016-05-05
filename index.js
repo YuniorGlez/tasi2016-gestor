@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-var db = mongojs(uri, ['noticias', 'contadores', 'users']);
+var db = mongojs(uri, ['noticias', 'contadores']);
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
@@ -24,13 +24,12 @@ app.post('/login', function (req, response) {
 	console.log("Pass = " + req.body.pass);
 	console.log("PassEnv = " + pass);
 	if (req.body.username == username && req.body.pass == pass)
-		response.send("pene !");
+		response.send("Usuario validado");
 	else
-		response.send("puta !");
+		response.send("Usuario no válido");
 });
 
 app.get('/logout', function (req, res) {
-	req.logout();
 	res.sendStatus(200);
 });
 
@@ -94,5 +93,4 @@ function getNextSequence(name, callback) {
 
 app.listen(app.get('port'), function () {
 	console.log('Node app is running on port', app.get('port'));
-	db.users.save()
 });
