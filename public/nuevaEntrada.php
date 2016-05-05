@@ -56,7 +56,7 @@
 						<input class="file-path validate col s7 m5" type="text" />
 						<div class="azul-escuela btn col s5 offset-m1 m6">
 							<span>Fichero</span>
-							<input type="file" id="img-file" value="Image" name="img" ng-model="img" accept="img/*">
+							<input type="file" id="img-file" value="Image" name="img" ng-model="newEntry.img" accept="img/*">
 						</div>
 					</div>
 					<div class="row">
@@ -65,19 +65,8 @@
 						<div class="azul-escuela enviar btn waves-effect waves-light col s4 offset-s1" ng-click="enviar()">Enviar <i class="material-icons">send</i>
 						</div>
 					</div>
-<!--  				TO TEST-->
-<!--
-					<div class="row">
-						<p class="col offset-s3 s4">
-							<input  type="checkbox" id="Test" />
-							<label for="Test">Test</label>
-						</p>
-					</div>
--->
 
 				</form>
-<!--				TO TEST -->
-<!--				<form action="submitTest.php" method="POST" id="formTest"></form>-->
 			</div>
 
 			<div class="col hide-on-small-only m9 l7 previous-view content no-padding">

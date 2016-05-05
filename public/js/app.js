@@ -123,13 +123,9 @@ angular.module('TasiApp', ['ngRoute', 'ngSanitize'])
 					function (err) {
 						console.log(err);
 					});
-
-
 			}
 		}
-
 	})
-
 //
 //
 //(function () {
