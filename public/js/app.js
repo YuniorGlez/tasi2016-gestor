@@ -17,8 +17,6 @@ angular.module('TasiApp', ['ngRoute', 'ngSanitize'])
 	})
 	.controller('LoginCtrl', function ($scope, $http, $rootScope) {
 		$scope.loginData = {};
-		$scope.loginData.username = "pepe";
-		$scope.loginData.pass = "pepe";
 		$scope.login = function () {
 			$http.post('/login',$scope.loginData).then(
 				function (success) {
