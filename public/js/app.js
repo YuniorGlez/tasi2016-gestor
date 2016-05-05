@@ -22,7 +22,6 @@ angular.module('TasiApp', ['ngRoute', 'ngSanitize'])
 		$scope.login = function () {
 			$http.post('/login',$scope.loginData).then(
 				function (success) {
-					alert(JSON.stringify(success.data));
 					if (success.data == 'Usuario validado') {
 						localStorage.setItem('user', JSON.stringify(success.data));
 						window.location.href = "#/board";
