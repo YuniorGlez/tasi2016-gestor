@@ -10,6 +10,15 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
+app.all('*', function (req, res, next) {
+	req.accepts('application/json');
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET');
+	next();
+});
+
 app.use(bodyParser.json());
 
 var db = mongojs(uri, ['noticias', 'contadores']);
@@ -53,12 +62,12 @@ app.get('/notice/:id', function (req, res) {
 	});
 });
 app.post('/notice', function (req, res) {
-	var validate = true;
-	if (validate) {
+//	var validate = true;
+//	if (validate) {
 		getNextSequence('noticias', function (nextId) {
 			db.noticias.insert({
 				_id: nextId,
-				img: req.body.img,
+//				img: req.body.img,
 				titulo: req.body.titulo,
 				cuerpo: req.body.cuerpo
 			}, function (err, items) {
@@ -66,7 +75,7 @@ app.post('/notice', function (req, res) {
 				res.send('Metido');
 			});
 		})
-	}
+//	}
 
 });
 

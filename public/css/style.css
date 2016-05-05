@@ -116,6 +116,7 @@ display: none;
 }
 .leftDisplay {
 	max-height: 96vh;
+	min-height: 96vh;
 	overflow-y: scroll;
 	padding-bottom: 15em;
 }
@@ -131,6 +132,7 @@ display: none;
 	padding-left: 3px !important;
 	transition: 1s all ease;
 	max-width: 95%;
+	min-width: 95%;
 }
 .del-btn{
 	position: fixed;

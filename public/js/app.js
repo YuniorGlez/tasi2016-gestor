@@ -38,32 +38,30 @@ angular.module('TasiApp', ['ngRoute', 'ngSanitize'])
 		if (!localStorage.getItem('user')) window.location.href = "/";
 		$scope.user = JSON.parse(localStorage.getItem('user'));
 		$scope.newEntry = {};
-		$scope.newEntry.title = "";
-		$scope.newEntry.description = "";
 		$scope.toHTML = function (text) {
 			return text.replace(/\n/g, "<br/>");
 		}
 		$scope.enviar = function () {
-			if ($scope.newEntry.img.value != "") {
-				var pregunta = prompt("¿Estas seguro de que está todo correcto? Si/No \n");
-				if (pregunta == "Sí" || pregunta == "Si" || pregunta == "sí" || pregunta == "si" || pregunta == "SI" || pregunta == "SÍ") {
-					$http.post('/notice', $scope.newEntry).then(
-						function (success) {
-							if (success.status == 200) {
-								alert('Noticia subida correctamente');
-								window.location.href = "#/board";
-							}
-						},
-						function (err) {
-							alert(err);
+//			if ($scope.newEntry.img && $scope.newEntry.img.value != null) {
+			var pregunta = prompt("¿Estas seguro de que está todo correcto? Si/No \n");
+			if (pregunta == "Sí" || pregunta == "Si" || pregunta == "sí" || pregunta == "si" || pregunta == "SI" || pregunta == "SÍ") {
+				$http.post('/notice', $scope.newEntry).then(
+					function (success) {
+						if (success.status == 200) {
+							alert('Noticia subida correctamente');
 							window.location.href = "#/board";
-						});
-				} else {
-					alert("Su noticia no se ha enviado, revisela y vuelva a enviarla");
-				}
+						}
+					},
+					function (err) {
+						alert(err);
+						window.location.href = "#/board";
+					});
 			} else {
-				alert("Es necesario adjuntar una imagen");
+				alert("Su noticia no se ha enviado, revisela y vuelva a enviarla");
 			}
+//			} else {
+//				alert("Es necesario adjuntar una imagen");
+//			}
 
 		}
 
